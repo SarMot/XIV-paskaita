@@ -23,6 +23,7 @@
             width: 100%;
             margin: auto;
         }
+
         a {
             text-decoration:none ;
             transition: all 0.3s ease;
@@ -66,23 +67,23 @@
             color:#333;
             border-bottom-color:#673ab7 ;
         }
-        .icon{
+
+        .icon {
+            position:relative;
+        }
+
+        .icon, .icon:after, .icon:before{
             display: block;
             width: 1.5rem;
             height: 0.1875rem;
-            background-color: #555555 ;
+            background-color: #555555;
+            transition: background-color 0.3s linear, transform 0.3s linear;
         }
         .icon:after, .icon:before{
             position: absolute;
             content: "";
         }
-        .icon:after, .icon:before{
-            display: block;
-            width: 1.5rem;
-            height: 0.1875rem;
-            background-color: #555555 ;
-            transition: backgroud-color 0.3s;
-        }
+        
         .icon:after{
             top: 0.5rem;
         }
@@ -90,7 +91,7 @@
             top: -0.5rem;
         }
         .toggle{
-            /*display:none; */
+            display:none; 
             border:0;
             background-color: transparent;
             cursor: pointer;
@@ -101,18 +102,18 @@
         }
 
         .toggle.active .icon:before{
-            transform: translate(0.5rem) rotate(45eg);
+            transform: translateY(0.5rem) rotate(45deg);
         }
 
         .toggle.active .icon:after{
-            transform: translate(0.5rem) rotate(-45eg);
+            transform: translateY(-0.5rem) rotate(-45deg);
         }
 
         .zalia{
             background-color: green;
         }
 
-        @media screen and (max-width:720px) {
+        @media screen and (max-width:791px) {
 
             .container{
                 margin-top: 4.25rem;
@@ -123,6 +124,9 @@
                 position: absolute;
                 width: 100%;
                 top:0;
+            }
+            .area{
+                flex-direction: column;
             }
             .toggle{
                 display: block;
@@ -139,7 +143,14 @@
             .list.active{
                 display: flex;
             }
-            
+                       
+        }
+
+        .kvadratelis{
+                width: 200px;
+                height: 200px;
+                background-color: red;
+
         }
 
 
@@ -163,18 +174,24 @@
                      </span>
 
                 </nav>
+
                 <button id="hamburger" class="toggle">
-                    <span class="icon">_</span>
+                    <span class="icon"></span>
                 </button>
             </div>   
         </div>
+
+        <div class="kvadratelis">Tekstas</div>
     </div>
 
     <script>
-        document.querySelector('.toggle').onclick = function(){
-            this.classList.toggle('active');
-            document.querySelector('.list')this.classList.toggle('active');
-        }  
+
+        document.querySelector('.toggle').onclick = function() {
+           this.classList.toogle('active'); 
+           document.querySelector('.list').classList.toogle('active')
+        }      
+          
     </script>
+    
 </body>
 </html>
